@@ -1,152 +1,113 @@
-# Website Health Checker
+# 🌐 Website Health Checker
 
-A Django-based web application that monitors website availability and provides basic network diagnostics. Users can enter a website URL and instantly check its status, response time, and IP address.
+A Django-based Website Health Checker that monitors website availability, performs DNS resolution, measures HTTP response times, and displays basic network diagnostics.
 
-## Features
+## 🚀 Features
 
-- Check website availability (UP/DOWN)
-- Measure website response time
-- Retrieve website IP address
-- Store website monitoring history
-- Simple and user-friendly interface
-- Built with Django and Python
+- Website Availability Check (UP/DOWN)
+- HTTP Response Monitoring
+- Response Time Measurement
+- DNS Resolution
+- IP Address Retrieval
+- Monitoring History Storage
+- Simple Web Interface
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - Python
 - Django
 - Requests
+- Socket Programming
 - SQLite
 - HTML
-- CSS
-- Git & GitHub
+- Git
+- GitHub
 
-## Project Structure
+## 🌐 Networking Concepts Used
 
-```text
-WebsiteMonitor/
-│
-├── config/
-│   ├── settings.py
-│   ├── urls.py
-│   ├── asgi.py
-│   └── wsgi.py
-│
-├── myapp/
-│   ├── migrations/
-│   ├── templates/
-│   │   └── myapp/
-│   │       └── index.html
-│   ├── admin.py
-│   ├── models.py
-│   ├── urls.py
-│   └── views.py
-│
-├── manage.py
-├── requirements.txt
-├── README.md
-└── db.sqlite3
+### DNS Resolution
+
+Converts domain names into IP addresses using Python's socket module.
+
+```python
+import socket
+
+ip_address = socket.gethostbyname("google.com")
+print(ip_address)
 ```
 
-## Installation
+### HTTP Monitoring
 
-### Clone Repository
+Checks website availability using HTTP requests.
 
-```bash
-git clone https://github.com/YOUR_USERNAME/WebsiteMonitor.git
-cd WebsiteMonitor
+```python
+import requests
+
+response = requests.get("https://google.com")
+print(response.status_code)
 ```
 
-### Create Virtual Environment
+### Response Time Measurement
 
-```bash
-python -m venv venv
+Measures how quickly a website responds.
+
+```python
+import time
+import requests
+
+start = time.time()
+requests.get("https://google.com")
+end = time.time()
+
+response_time = (end - start) * 1000
 ```
 
-### Activate Virtual Environment
-
-#### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-#### Linux/macOS
-
-```bash
-source venv/bin/activate
-```
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Run Migrations
-
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
-### Run Server
-
-```bash
-python manage.py runserver
-```
-
-Open:
-
-```text
-http://127.0.0.1:8000/
-```
-
-## How It Works
-
-1. Enter a website domain (e.g., google.com)
-2. Click the **Check** button
-3. The application sends an HTTP request to the website
-4. It calculates the response time
-5. It retrieves the IP address
-6. Results are displayed and stored in the database
-
-## Example Output
+## 📊 Example Output
 
 ```text
 Website: google.com
 
 Status: UP
 
-Response Time: 124.52 ms
+Response Time: 128.54 ms
 
 IP Address: 142.250.183.78
 ```
 
-## Learning Outcomes
+## 🎯 Skills Demonstrated
 
-- Django Models
-- Django Views
-- Django Templates
-- URL Routing
+- Python Programming
+- Django Development
+- Backend Development
 - Database Operations
-- HTTP Requests
+- HTTP Protocol
 - DNS Resolution
-- Python Networking
-- Git & GitHub Workflow
+- Socket Programming
+- Network Diagnostics
+- Website Monitoring
+- Git & GitHub
 
-## Future Enhancements
+## 📚 Learning Outcomes
+
+- Django Models, Views, and Templates
+- HTTP Request Handling
+- DNS Lookup Mechanisms
+- Network Programming in Python
+- Website Performance Monitoring
+- Backend Application Development
+- Database Management
+
+## 🔮 Future Enhancements
 
 - SSL Certificate Validation
 - Website Uptime Analytics
 - Email Alerts
 - REST API Integration
-- PostgreSQL Support
+- PostgreSQL Database
 - Docker Deployment
-- Monitoring Dashboard
+- Multi-Website Monitoring
 
-## Author
+## 👩‍💻 Author
 
 **Chandana P**
 
--
