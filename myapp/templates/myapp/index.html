@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Health Checker</title>
+</head>
+<body>
+
+<h1>Website Health Checker</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <input
+        type="text"
+        name="url"
+        placeholder="google.com"
+        required
+    >
+
+    <button type="submit">
+        Check
+    </button>
+
+</form>
+
+<hr>
+
+{% for site in websites %}
+
+<h3>{{ site.url }}</h3>
+
+<p>Status: {{ site.status }}</p>
+
+<p>Response Time: {{ site.response_time }} ms</p>
+
+<p>IP Address: {{ site.ip_address }}</p>
+
+<hr>
+
+{% endfor %}
+
+</body>
+</html>
